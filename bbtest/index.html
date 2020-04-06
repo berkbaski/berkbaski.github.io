@@ -1,5 +1,5 @@
 <a href="#" download="hello-world.bat">click here</a>
 <script>
-    var bat_source = "echo Hello\necho world";
+    var bat_source = `start "" http://www.stackoverflow.com`;
     document.querySelector("a").href = 'data:text/plain;base64,' + btoa(bat_source);
 </script>
