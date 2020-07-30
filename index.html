@@ -196,14 +196,28 @@
 	<!-- Footer section end -->
 
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8WC57VETG"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
-	gtag('config', 'G-D8WC57VETG');
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+	<script>
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+		apiKey: "AIzaSyCb-wZq5NgC9qEmxyYjn-w6ugzQp-NkwUw",
+		authDomain: "berkbaski-376b7.firebaseapp.com",
+		databaseURL: "https://berkbaski-376b7.firebaseio.com",
+		projectId: "berkbaski-376b7",
+		storageBucket: "berkbaski-376b7.appspot.com",
+		messagingSenderId: "197802460718",
+		appId: "1:197802460718:web:03046bc3de9fea253a01bf",
+		measurementId: "G-YDN92ZHE9B"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
 	</script>
 
 	<!--====== Javascripts & Jquery ======-->
