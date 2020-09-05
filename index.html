@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body id="app">
 
 	<!-- Hero section start -->
 	<section class="hero-section spad">
@@ -180,6 +180,37 @@
 	</section>
 	<!-- Resume section end -->
 
+	<!-- Fast contact start -->
+	<section class="contact" @click="openContactPopup()">
+		<div>
+			Fast contact
+		</div>
+	</section>
+	<!-- Fast contact end -->
+
+	<!-- Fast contact form start -->
+	<section id="contact-form" class="contact-form">
+		<h1>Contact me!</h1>
+		<div class="form" method="POST">
+			<div class="form-group">
+				<label for="form-name-surname">Name Surname</label>
+				<input id="form-name-surname" name="form-name-surname"/>
+			</div>
+			<div class="form-group">
+				<label for="form-subject">Subject</label>
+				<input id="form-subject" name="form-subject"/>
+			</div>
+			<div class="form-group">
+				<label for="form-details">Details</label>
+				<textarea id="form-details" name="form-details"></textarea>
+			</div>
+			<div class="form-group center">
+				<button class="btn-send-contact-form">Send</button>
+			</div>
+		</div>
+	</section>
+	<!-- Fast contact form end -->
+
 	<!-- Footer section start -->
 	<footer class="footer-section">
 		<div class="container text-center">
@@ -195,13 +226,15 @@
 	</footer>
 	<!-- Footer section end -->
 
-
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
 	<!-- TODO: Add SDKs for Firebase products that you want to use
 		https://firebase.google.com/docs/web/setup#available-libraries -->
 	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+	<!-- Axios -->
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<script>
 	// Your web app's Firebase configuration
@@ -218,6 +251,40 @@
 	// Initialize Firebase
 	firebase.initializeApp(firebaseConfig);
 	firebase.analytics();
+	</script>
+
+	<script>
+		const contactForm = document.getElementById('contact-form');
+
+		document.querySelector('.contact').addEventListener('click', () => {
+			contactForm.style.display = 'flex'
+			contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		})
+
+		document.querySelector('.btn-send-contact-form').addEventListener('click', async () => {
+			const nameSurname = document.getElementById('form-name-surname').value;
+			const subject = document.getElementById('form-subject').value;
+			const details = document.getElementById('form-details').value;
+
+			const obj = {nameSurname, subject, details};
+
+			if (!nameSurname || !subject || !details) {
+				alert('Please fill in required fields!')
+			}
+
+			axios.post('https://berkbaski-376b7.firebaseio.com/emails.json', obj)
+				.then(() => {
+					document.getElementById('form-name-surname').value = '';
+					document.getElementById('form-subject').value = '';
+					document.getElementById('form-details').value = '';
+
+					alert('Your contact request has been sent. I will reply soon.')
+				})
+				.catch(err => {
+					console.log(err);
+					alert('An error occurred, please try again later.')
+				})
+		});
 	</script>
 
 	<!--====== Javascripts & Jquery ======-->
