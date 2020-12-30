@@ -1551,6 +1551,15 @@ ol {
   color: #fff;
 }
 
+.sensitive-content {
+  font-size: 15px;
+  animation: color-animation 5s infinite;
+}
+
+.emojis {
+  font-size: 30px;
+}
+
 @-webkit-keyframes animation {
   0% {
     background-color: rgba(131,58,180,1);
@@ -1578,5 +1587,35 @@ ol {
   }
   100% {
     background-color: rgba(131,58,180,1);
+  }
+}
+
+@-webkit-keyframes color-animation {
+  0% {
+    color: rgba(131,58,180,1);
+  }
+  33.3% {
+    color: rgba(253,29,29,1);
+  }
+  66.6% {
+    color: rgba(252,176,69,1);
+  }
+  100% {
+    color: rgba(131,58,180,1);
+  }
+}
+
+@keyframes color-animation {
+  0% {
+    color: rgba(131,58,180,1);
+  }
+  33.3% {
+    color: rgba(253,29,29,1);
+  }
+  66.6% {
+    color: rgba(252,176,69,1);
+  }
+  100% {
+    color: rgba(131,58,180,1);
   }
 }
