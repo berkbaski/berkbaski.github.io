@@ -1,0 +1,64 @@
+.snowflake {
+	position: absolute;
+	color: #fff;
+	line-height: 1;
+	pointer-events: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.snowflake-solid {
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background: #fff;
+}
+
+h2 {
+	color: #f2f7f8;
+	background: transparent !important;
+}
+
+.hero-info ul li span {
+	color: #fff;
+}
+
+.hero-section {
+	background: #222;
+}
+
+.social-section {
+	background: #333;
+}
+
+.social-section .social-link-warp:after {
+	width: 0;
+}
+
+.social-links {
+	background: transparent !important;
+}
+
+.social-links a i {
+	color: #f2f7f8
+}
+
+.resume-section {
+	background: #151313;
+}
+
+h3 {
+	color: #dcd9d9
+}
+
+.resume-list li p {
+	color: #fff
+}
+
+h5 {
+	color: #a5a5a5;
+}
